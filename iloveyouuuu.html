@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Handsome Ben ❤️</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400,600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Lora', serif;
+        background: linear-gradient(135deg,#fff0f5,#ffe4e1);
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 70px;
+        color: #8b1a1a;
+        margin-top: 40px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 28px;
+        color: #8b1a1a;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    .letter {
+        width: 85%;
+        max-width: 600px;
+        margin: auto;
+        background: rgba(255,255,255,0.9);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        animation: fadeIn 2s;
+        border: 2px solid #f5e6e6;
+    }
+
+    button {
+        background: #8b1a1a;
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        margin: 10px;
+        font-size: 16px;
+        font-family: 'Cinzel', serif;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 15px rgba(139,26,26,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.08);
+        background: #6b0f0f;
+        box-shadow: 0 6px 20px rgba(139,26,26,0.4);
+    }
+
+    .gallery {
+        margin: 50px 0;
+    }
+
+    .gallery-container {
+        max-width: 500px;
+        margin: 30px auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .gallery-slide {
+        width: 100%;
+        height: 500px;
+        display: none;
+        object-fit: cover;
+        border-radius: 20px;
+        animation: slideIn 0.5s ease;
+    }
+
+    .gallery-slide.active {
+        display: block;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(139,26,26,0.7);
+        color: white;
+        border: none;
+        font-size: 28px;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+        font-family: 'Cinzel', serif;
+    }
+
+    .prev:hover, .next:hover {
+        background: rgba(139,26,26,0.9);
+    }
+
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    .dots {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 8px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .dot.active {
+        background-color: #8b1a1a;
+    }
+
+    .timer {
+        font-family: 'Cinzel', serif;
+        font-size: 24px;
+        margin: 30px;
+        color: #8b1a1a;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 0 50px rgba(0,0,0,0.3);
+        z-index: 100;
+        max-width: 500px;
+        border: 2px solid #f5e6e6;
+    }
+
+    .popup h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .popup p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+        margin: 20px 0;
+    }
+
+    .heart {
+        position: fixed;
+        font-size: 25px;
+        animation: float 5s linear infinite;
+    }
+
+    .signature {
+        font-family: 'Great Vibes', cursive;
+        font-size: 40px;
+        margin: 50px 0 30px 0;
+        color: #8b1a1a;
+    }
+
+    @keyframes float {
+        from { transform: translateY(100vh); }
+        to { transform: translateY(-10vh); }
+    }
+
+    @keyframes slideIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<h1>For My sweet boy Ben ❤️</h1>
+
+<div class="letter">
+    <p>Click below to see my heart…</p>
+    <button onclick="openLetter()">📜 Open Secret Letter</button>
+    <button onclick="askValentine()">💘 Be My Valentine</button>
+</div>
+
+<div class="timer" id="timer"></div>
+
+</div>
+
+<p class="signature">Forever Yours, Eris 💕</p>
+
+<div class="popup" id="popup"></div>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9d4c49.mp3">
+</audio>
+
+<div class="heart-image">
+  <img src="https://i.pinimg.com/736x/08/44/95/084495c57b0a5b35592ae3374349605a.jpg" alt="My Love" style="
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      clip-path: path('M150 270 
+                      C 150 270, 20 200, 75 130 
+                      C 150 20, 225 130, 300 130 
+                      C 380 200, 150 270, 150 270 Z');
+      display:block;
+      margin:40px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  ">
+</div>
+
+<script>
+   
+
+
+
+    // Popups
+    function openLetter() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("popup").innerHTML = `
+            <h2>My Love Ben ❤️</h2>
+            <p>From the moment you entered my life, you changed every meaning of happiness. Every dream I have includes you. Every prayer I make includes your name. You are not just my love... You are my peace, my blessing, my forever. Will you continue this beautiful journey with me?</p>
+            <button onclick="closePopup()" style="margin-top:20px;">Close 💕</button>
+        `;
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function askValentine() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("popup").innerHTML = `
+            <h2>Will You Be My Valentine? 💘</h2>
+            <button onclick="yesLove()" style="margin-top:20px;">YES ❤️</button>
+            <button onclick="noLove()">NO 😭</button>
+        `;
+    }
+
+    function yesLove() {
+        document.getElementById("popup").innerHTML = `
+            <h2>You Made Me The Happiest Woman Alive ❤️</h2>
+            <button onclick="sendMessage()" style="margin-top:20px;">Tell Eris 💌</button>
+        `;
+        confetti();
+    }
+
+    function noLove() {
+        document.getElementById("popup").innerHTML = "<h2>I'll keep loving you anyway 😌❤️</h2>";
+    }
+
+    // Popup Email
+    function sendMessage() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("popup").innerHTML = `
+            <h2>Send Me a Message 💌</h2>
+            <p>THIS IS MY IMESSAGE!LET ME KNOW!!!</p>
+            <p style="font-weight:bold; font-size:20px;">eriisash0@gmail.com</p>
+            <button onclick="closePopup()" style="margin-top:20px;">Close 💕</button>
+        `;
+    }
+
+    // Countdown Timer
+    const valentine = new Date("Feb 14, 2026 00:00:00").getTime();
+    setInterval(() => {
+        let now = new Date().getTime();
+        let distance = valentine - now;
+        let days = Math.floor(distance / (1000*60*60*24));
+        let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+        let mins = Math.floor((distance % (1000*60*60)) / (1000*60));
+        document.getElementById("timer").innerHTML = "Countdown to Valentine's Day ❤️ "+days+"d "+hours+"h "+mins+"m";
+    }, 1000);
+
+    // Floating Hearts
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+    }, 600);
+
+    // Confetti Hearts
+    function confetti() {
+        for (let i = 0; i < 50; i++) {
+            let conf = document.createElement("div");
+            conf.innerHTML = "💖";
+            conf.className = "heart";
+            conf.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(conf);
+            setTimeout(() => conf.remove(), 4000);
+        }
+    }
+</script>
+
+</body>
+</html>
